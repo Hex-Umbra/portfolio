@@ -8,7 +8,6 @@ import NotFound from "./pages/NotFound.jsx";
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/admin" element={<Admin />}></Route>
