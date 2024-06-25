@@ -1,33 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+const BASE_URL = "http://localhost:3030/contact";
 
 export default function Contacts() {
+  const [contact, setContact] = useState([]);
+  async function getContact() {
+    const res = await fetch(BASE_URL);
+    const data = await res.json();
+    setContact(data);
+    console.log(data);
+    console.log(contact);
+  }
+
+  useEffect(() => {
+    getContact();
+  }, []);
+
   return (
-    <div>
-      <div className="mt-10 mb-0">
-        <h2 className="font-bold text-xl mb-5 text-center">
-          Contacts
-        </h2>
-        <ul className="ml-20">
-          <table>
-            <tbody>
-              <tr>
-                <td>Tel</td>
-                <td className=" font-extralight px-5">0667383641</td>
-              </tr>
-              <tr>
-                <td>Mail</td>
-                <td className=" font-extralight px-5">g.p.dacosta@hotmail.com</td>
-              </tr>
-              <tr>
-                <td>Addresse</td>
-                <td className=" font-extralight px-5">
-                  23 Chemin De Ruchelle, 64510, Assat
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </ul>
-      </div>
+    <div className=" text-white">
+      {contact.length > 0 &&
+        contact.map((item) => (
+          <div>
+            <h2>{item.prenom}</h2>
+            <h2>{item.nom}</h2>
+            <h2>{item.email}</h2>
+            <h2>{item.addresse}</h2>
+          </div>
+        ))}
     </div>
   );
 }
