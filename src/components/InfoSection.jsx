@@ -5,8 +5,8 @@ import Hobbies from "./Hobbies.jsx";
 
 export default function InfoSection() {
   return (
-    <section className="h-[650px] bg-[#000000b9] mx-16 rounded-3xl mb-10">
-      <div className="grid grid-cols-2 grid-rows-1 justify-end h-full">
+    <section className="h-[650px] bg-[#000000b9] mx-16 rounded-3xl mb-10 content-center">
+      <div className="flex flex-col items-center w-full ">
         {/* 1ere colonne 1ere ligne */}
         <Skills/>
         {/* 2eme colonne 1ere ligne */}

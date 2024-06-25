@@ -3,11 +3,11 @@ import React from "react";
 export default function Languages() {
   return (
     <div>
-      <div className="h-auto w-4/5 m-6 mb-0">
-        <h2 className="font-bold text-3xl mb-5 border-2 border-white rounded-3xl text-center">
+      <div className="m-6 border-white border-2 rounded-3xl">
+      <h2 className="font-bold text-3xl mb-5 border-2 border-white rounded-3xl text-center">
           Langues
         </h2>
-          <table>
+          <table className="mb-5">
             <tbody>
               <tr>
                 <td className="px-6">Français</td>

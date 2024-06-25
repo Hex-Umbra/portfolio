@@ -21,7 +21,7 @@ export default function Section() {
         </div>
         {/* 2eme colonne */}
         <div className="h-full w-4/5 place-self-center">
-          <div className=" absolute bg-slate-950 rounded-full w-[400px] h-[400px] bg-[url('public/assets/images/profile_pic.png')] bg-top bg-contain bg-no-repeat top-16"></div>
+          <div className=" absolute bg-slate-950 rounded-full w-[400px] h-[400px] bg-[url('/assets/images/profile_pic.png')] bg-top bg-contain bg-no-repeat top-16"></div>
         </div>
       </div>
     </section>
