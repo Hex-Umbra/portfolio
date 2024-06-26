@@ -18,15 +18,27 @@ export default function Contacts() {
 
   return (
     <div className=" text-white">
+      <h2 className="font-bold text-3xl my-5 border-2 border-white rounded-3xl text-center">
+          Contacts
+        </h2>
       {contact.length > 0 &&
-        contact.map((item) => (
-          <div>
-            <h2>{item.prenom}</h2>
-            <h2>{item.nom}</h2>
-            <h2>{item.email}</h2>
-            <h2>{item.addresse}</h2>
-          </div>
-        ))}
+        <table>
+          <tbody>
+            <tr>
+              <td>Tel</td>
+              <td className=" font-extralight px-5">{contact[0].telephone}</td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td className=" font-extralight px-5">{contact[0].email}</td>
+            </tr>
+            <tr>
+              <td>Addresse</td>
+              <td className=" font-extralight px-5">{contact[0].addresse}</td>
+            </tr>
+          </tbody>
+        </table>
+        }
     </div>
   );
 }

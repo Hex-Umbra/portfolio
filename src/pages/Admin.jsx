@@ -9,9 +9,9 @@ export default function Admin() {
   async function getContact() {
     const res = await fetch(BASE_URL);
     const data = await res.json();
-    setPrenom(data[0].telephone);
-    setPrenom(data[0].email);
-    setPrenom(data[0].addresse);
+    setTelephone(data[0].telephone);
+    setEmail(data[0].email);
+    setAddresse(data[0].addresse);
   }
 
   useEffect(() => {
@@ -19,15 +19,38 @@ export default function Admin() {
   }, []);
   return (
     <section className="h-[550px] bg-[#000000b9] mx-16 rounded-3xl my-10">
-      <form action="/campgrounds" method="POST">
-        <div>
-          <label for="prenom">Prenom</label>
-          <input className="border-2 rounded-lg pl-5 ml-5" type="text" id="prenom" name="contact[prenom]" />
+      <form action="/contact" method="POST">
+        <div className="m-10">
           <div>
-            <label for="location">Location</label>
-            <input type="text" id="location" name="contact[nom]" />
+            <label for="email">Email</label>
+            <input
+              className="border-2 border-black rounded-lg pl-5 ml-5 bg-slate-400"
+              type="text"
+              id="email"
+              name="contact[email]"
+            />
           </div>
-          <button>Submit changes</button>
+          <div>
+            <label for="addresse">Addresse</label>
+            <input
+              className="border-2 border-black rounded-lg pl-5 ml-5 bg-slate-400"
+              type="text"
+              id="addresse"
+              name="contact[addresse]"
+            />
+          </div>
+          <div>
+            <label for="telephone">Telephone</label>
+            <input
+              className="border-2 border-black rounded-lg pl-5 ml-5 bg-slate-400"
+              type="text"
+              id="telephone"
+              name="contact[telepĥone]"
+            />
+          </div>
+          <button className="rounded-lg bg-slate-500 p-3 mt-3">
+            Submit changes
+          </button>
         </div>
       </form>
     </section>
