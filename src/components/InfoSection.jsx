@@ -5,7 +5,7 @@ import Hobbies from "./Hobbies.jsx";
 
 export default function InfoSection() {
   return (
-    <section className="h-[650px] bg-[#000000b9] mx-16 rounded-3xl mb-10 content-center">
+    <section className="h-[650px] bg-[#000000b9] mx-16 rounded-3xl mb-10 content-center shadow-2xl shadow-black">
       <div className="flex flex-col items-center w-full ">
         {/* 1ere colonne 1ere ligne */}
         <Skills/>

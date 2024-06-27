@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
 import AdminContacts from "../components/admin/AdminContacts";
-
-const BASE_URL = "http://localhost:3030/contact";
+import AdminSkills from "../components/admin/AdminSkills";
 
 export default function Admin() {
   return (
-  <AdminContacts/>);
+    <section className="h-[550px] bg-[#000000b9] mx-16 rounded-3xl my-10">
+      <AdminContacts />
+      <AdminSkills/>
+    </section>
+  );
 }

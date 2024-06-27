@@ -17,8 +17,8 @@ export default function Languages() {
   }, []);
   return (
     <div>
-      <div className="m-6 border-white border-2 rounded-3xl">
-        <h2 className="font-bold text-3xl mb-5 border-2 border-white rounded-3xl text-center">
+      <div className="m-6 border-white border-2 rounded-3xl shadow-lg shadow-red-500">
+        <h2 className="h2-primary">
           Langues
         </h2>
         <table className="mb-5">

@@ -17,12 +17,12 @@ export default function Skills() {
   }, []);
 
   return (
-    <div className=" mx-3 my-5 border-white border-2 rounded-3xl">
-      <h2 className="font-bold text-3xl mb-5 border-2 border-white rounded-3xl text-center">
+    <div className=" mx-3 my-5 border-white border-2 rounded-3xl shadow-lg shadow-red-500">
+      <h2 className="h2-primary">
         Compétences
       </h2>
       <ul className=" px-5 mb-5 flex gap-5 justify-center">
-        {skills.map((item) => (<li key={item.id}>{item.technologie}</li>))}
+        {skills.map((item) => (<li key={item._id}>{item.technologie}</li>))}
       </ul>
     </div>
   );

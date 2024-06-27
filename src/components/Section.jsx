@@ -3,11 +3,11 @@ import Contacts from "./Contacts";
 
 export default function Section() {
   return (
-    <section className="h-[550px] bg-[#000000b9] mx-16 rounded-3xl my-10">
+    <section className="h-[550px] bg-[#000000b9] mx-16 rounded-3xl my-10 shadow-2xl shadow-black">
       <div className="grid grid-cols-2 justify-items-end h-full relative">
         {/* 1ere colonnne */}
         <div className="h-full w-4/5 content-center">
-          <div className="mb-8">
+          <div className="mb-8"> 
             <h1 className="font-extrabold text-4xl mb-2 text-center">
               Gabriel Pereira Da Costa
             </h1>

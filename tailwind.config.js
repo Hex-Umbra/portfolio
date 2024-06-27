@@ -5,7 +5,9 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      bebasNeue:["Bebas Neue", "sans-serif"]
+    },
   },
   plugins: [],
 }

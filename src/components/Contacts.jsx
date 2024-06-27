@@ -18,7 +18,7 @@ export default function Contacts() {
 
   return (
     <div className=" text-white">
-      <h2 className="font-bold text-3xl my-5 border-2 border-white rounded-3xl text-center">
+      <h2 className="h2-primary">
           Contacts
         </h2>
       {contact.length > 0 &&
