@@ -21,8 +21,8 @@ export default function Skills() {
       <h2 className="h2-primary">
         Compétences
       </h2>
-      <ul className=" px-5 mb-5 flex gap-5 justify-center">
-        {skills.map((item) => (<li key={item._id}>{item.technologie}</li>))}
+      <ul className=" px-5 mb-5 flex gap-5 justify-center flex-wrap">
+        {skills.map((item) => (<li key={item._id}>{item.technologie}<span className={`bg-[url(${item.img})]`}></span></li>))}
       </ul>
     </div>
   );

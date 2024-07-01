@@ -24,8 +24,8 @@ export default function Hobbies() {
       <table className="mb-5">
         <tbody>
           {loisirs.length > 0 &&
-            loisirs.map((item) => (
-              <tr>
+            loisirs.map((item, index) => (
+              <tr key={index}>
                 <td className="px-6">{item.loisir}</td>
                 <td className=" font-extralight px-5">{item.details}</td>
               </tr>

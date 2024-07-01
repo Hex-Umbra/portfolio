@@ -3,7 +3,7 @@ import Contacts from "./Contacts";
 
 export default function Section() {
   return (
-    <section className="h-[550px] bg-[#000000b9] mx-16 rounded-3xl my-10 shadow-2xl shadow-black">
+    <section className="h-[100vh] bg-[#79261d] my-10 shadow-2xl shadow-black">
       <div className="grid grid-cols-2 justify-items-end h-full relative">
         {/* 1ere colonnne */}
         <div className="h-full w-4/5 content-center">

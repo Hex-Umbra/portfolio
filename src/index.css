@@ -1,8 +1,8 @@
-body{
-    background-color: rgba(128, 128, 128, 0.500)
+body {
+    background-color: rgb(218, 218, 218);
 }
-*{
-    color:white;
+* {
+    color: white;
 }
 
 @tailwind base;
@@ -10,8 +10,22 @@ body{
 @tailwind utilities;
 
 @layer components {
-    .h2-primary{
-        @apply font-bold text-3xl mb-5 border-2 border-white rounded-3xl text-center bg-[rgba(18,13,36,0.7)]; 
-
+    .h2-primary {
+        @apply font-bold text-3xl mb-5 border-2 border-white rounded-3xl text-center bg-[#79261d];
+    }
+    .btn-primary {
+        @apply rounded-lg bg-green-500 p-2 mt-1;
+    }
+    .btn-danger {
+        @apply rounded-lg bg-red-600 p-2 mt-1;
+    }
+    .nav-link {
+        @apply text-white hover:bg-[#943126] hover:text-black p-5;
+    }
+    .secondary-section {
+        @apply h-auto bg-slate-950 mx-16 rounded-3xl my-10 content-center shadow-2xl shadow-black;
+    }
+    .input-admin{
+        @apply border-2 border-black rounded-lg pl-5 ml-5 bg-slate-400 w-2/5 text-center;
     }
 }

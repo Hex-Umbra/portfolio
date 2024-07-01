@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { FaRegSave } from "react-icons/fa";
 
 const BASE_URL = "http://localhost:3030/contact";
 
@@ -22,9 +23,9 @@ export default function AdminContacts() {
     getContact();
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    fetch(BASE_URL, {
+    await fetch(BASE_URL, {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({ nom, prenom, telephone, email, addresse }),
@@ -34,47 +35,39 @@ export default function AdminContacts() {
   };
 
   return (
-    <form className="mt-10 border-2" onSubmit={handleSubmit}>
-      <div className="m-10">
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
-            className="border-2 border-black rounded-lg pl-5 ml-5 bg-slate-400 w-1/2"
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-            value={email}
-            type="text"
-            id="email"
-          />
-        </div>
-        <div>
-          <label htmlFor="addresse">Addresse</label>
-          <input
-            className="border-2 border-black rounded-lg pl-5 ml-5 bg-slate-400 w-1/2"
-            onChange={(e) => {
-              setAddresse(e.target.value);
-            }}
-            value={addresse}
-            type="text"
-            id="addresse"
-          />
-        </div>
-        <div>
-          <label htmlFor="telephone">Telephone</label>
-          <input
-            className="border-2 border-black rounded-lg pl-5 ml-5 bg-slate-400"
-            onChange={(e) => {
-              setTelephone(e.target.value);
-            }}
-            value={telephone}
-            type="text"
-            id="telephone"
-          />
-        </div>
-        <button className="rounded-lg bg-slate-500 p-3 mt-3">
-          Submit changes
-        </button>
+    <form onSubmit={handleSubmit}>
+      <div className="flex flex-col justify-center items-center my-5">
+        <label htmlFor="email">Email</label>
+        <input
+          className="input-admin"
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+          value={email}
+          type="text"
+          id="email"
+        />
+        <label htmlFor="addresse">Addresse</label>
+        <input
+          className="input-admin"
+          onChange={(e) => {
+            setAddresse(e.target.value);
+          }}
+          value={addresse}
+          type="text"
+          id="addresse"
+        />
+        <label htmlFor="telephone">Telephone</label>
+        <input
+          className="input-admin"
+          onChange={(e) => {
+            setTelephone(e.target.value);
+          }}
+          value={telephone}
+          type="text"
+          id="telephone"
+        />
+        <button className="btn-primary mt-5"><FaRegSave size={24}/></button>
       </div>
     </form>
   );

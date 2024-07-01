@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Section />
-      <InfoSection/>
+      <InfoSection />
     </>
   );
 }

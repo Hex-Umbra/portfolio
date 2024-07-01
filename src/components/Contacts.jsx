@@ -18,7 +18,7 @@ export default function Contacts() {
 
   return (
     <div className=" text-white">
-      <h2 className="h2-primary">
+      <h2 className="h2-primary bg-slate-950">
           Contacts
         </h2>
       {contact.length > 0 &&
