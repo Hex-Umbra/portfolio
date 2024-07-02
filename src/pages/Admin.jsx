@@ -12,6 +12,11 @@ export default function Admin() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    if (username === "Aeternum" && password === "adminroot") {
+      setIsLoggedIn(true);
+    } else {
+      alert("Vous n'avez pas accès a cette page veuillez réessayer")
+    }
   }
 
   if (!isLoggedIn) {

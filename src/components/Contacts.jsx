@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { LuContact } from "react-icons/lu";
 
 const BASE_URL = "http://localhost:3030/contact";
 
@@ -18,10 +19,14 @@ export default function Contacts() {
 
   return (
     <div className=" text-white">
-      <h2 className="h2-primary bg-slate-950">
-          Contacts
-        </h2>
-      {contact.length > 0 &&
+      <div className="grid grid-cols-4">
+        <h2 className="">Contacts</h2>
+        <span className="grow-0">
+          <LuContact />
+        </span>
+      </div>
+
+      {contact.length > 0 && (
         <table>
           <tbody>
             <tr>
@@ -38,7 +43,7 @@ export default function Contacts() {
             </tr>
           </tbody>
         </table>
-        }
+      )}
     </div>
   );
 }
