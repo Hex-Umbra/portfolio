@@ -4,6 +4,7 @@ import Admin from "./pages/Admin.jsx";
 import Login from "./pages/Login.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import Navbar from "./components/Navbar.jsx";
+import UpdateSkill from "./pages/UpdateSkill.jsx";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/admin" element={<Admin />}></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/updateSkill/:id" element={<UpdateSkill />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </BrowserRouter>

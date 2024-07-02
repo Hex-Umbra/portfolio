@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import NewSkill from "./NewSkill";
 import { MdDelete } from "react-icons/md";
+import { FaRegEdit } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const BASE_URL = "http://localhost:3030/competences";
 
@@ -21,23 +23,38 @@ export default function AdminSkills() {
       getSkills();
     }
   }
-  useEffect(() => {
+  useEffect(()=>{
     getSkills();
-  }, []);
+  },[])
   return (
     <div className="grid content-center items-center justify-items-center my-5">
-      {skill.map((item, index) => (
-        <div
-          key={index}
-          className="grid grid-cols-3 border-2 border-slate-500 w-2/6"
-        >
-          <p className="px-5 basis-5/6">{item.technologie}</p>
-          <span className="px-5 basis-5/6">{item.mastery}</span>
-          <button className="btn-danger basis-0 w-1/5" onClick={() => deleteSkill(item._id)}>
-            <MdDelete />
-          </button>
-        </div>
-      ))}
+      <table>
+        <tbody>
+          {skill.map((item, index) => (
+            <tr key={index}>
+              <td className="px-2">
+                <img className="w-3/4 h-3/4" src={item.img} alt="" />
+              </td>
+              <td className="px-2">{item.technologie}</td>
+              <td className="px-2">{item.mastery}</td>
+              <td className="px-2">
+                <button
+                  className="btn-danger basis-0"
+                  onClick={() => deleteSkill(item._id)}
+                >
+                  <MdDelete />
+                </button>
+              </td>
+              <td>
+                <Link to={`/updateSkill/${item._id}`}>
+                  {" "}
+                  <FaRegEdit />
+                </Link>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
       <NewSkill />
     </div>
   );

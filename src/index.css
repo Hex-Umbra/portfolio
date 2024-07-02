@@ -25,7 +25,10 @@ body {
     .secondary-section {
         @apply h-auto bg-slate-950 mx-16 rounded-3xl my-10 content-center shadow-2xl shadow-black;
     }
-    .input-admin{
+    .input-admin {
         @apply border-2 border-black rounded-lg pl-5 ml-5 bg-slate-400 w-2/5 text-center;
+    }
+    .form {
+        @apply m-5 flex flex-col justify-evenly items-center;
     }
 }

@@ -35,7 +35,7 @@ export default function NewSkill() {
     <div className="flex flex-row">
       {isAdd && (
         <form
-          className="m-5 flex flex-col justify-evenly items-center"
+          className="form"
           onSubmit={makeNewSkill}
         >
           <label htmlFor="skill">Technologie</label>
