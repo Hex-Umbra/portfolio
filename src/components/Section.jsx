@@ -8,7 +8,7 @@ export default function Section() {
         {/* 1ere colonnne */}
         <div className="h-full w-4/5 content-center">
           <div className="mb-8"> 
-            <h1 className="font-extrabold text-4xl mb-2 text-center">
+            <h1 className="font-extrabold lg:text-6xl mb-2 text-center md:text-2xl">
               Gabriel Pereira Da Costa
             </h1>
             <h2 className="font-bold mb-10 text-center">Web developer</h2>

@@ -26,6 +26,7 @@ export default function Languages() {
             {langues.length > 0 &&
               langues.map((item, index) => (
                 <tr key={index}>
+                  <td className="px-6"><img src={item.image} alt="" /></td>
                   <td className="px-6">{item.langue}</td>
                   <td className=" font-extralight px-5">{item.mastery}</td>
                 </tr>

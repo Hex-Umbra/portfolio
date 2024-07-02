@@ -1,43 +1,42 @@
 import React, { useEffect, useState } from "react";
+import NewHobbie from "./NewHobbie";
 import { MdDelete } from "react-icons/md";
-import NewLangue from "./NewLangue";
 
-const BASE_URL = "http://localhost:3030/languages";
+const BASE_URL = "http://localhost:3030/loisirs";
 
-export default function AdminLangues() {
-  const [langues, setLangues] = useState([]);
-  async function getLangues() {
+export default function AdminHobbies() {
+  const [loisirs, setLoisirs] = useState([]);
+  async function getLoisirs() {
     const res = await fetch(BASE_URL);
     const data = await res.json();
-    setLangues(data);
+    setLoisirs(data);
     console.log(data);
-    console.log(langues);
+    console.log(loisirs);
   }
-  async function deleteLangue(id) {
+  async function deleteLoisir(id) {
     const res = await fetch(`${BASE_URL}/${id}`, {
       method: "DELETE",
     });
     if (res.ok) {
-      getLangues();
+      getLoisirs();
     }
   }
   useEffect(() => {
-    getLangues();
+    getLoisirs();
   }, []);
   return (
     <div className="grid content-center items-center justify-items-center my-5">
       <table className="mb-5">
         <tbody>
-          {langues.length > 0 &&
-            langues.map((item, index) => (
+          {loisirs.length > 0 &&
+            loisirs.map((item, index) => (
               <tr key={index}>
-                <td className="px-6"><img src={item.image} alt="" /></td>
-                <td className="px-6">{item.langue}</td>
-                <td className=" font-extralight px-5">{item.mastery}</td>
+                <td className="px-6">{item.loisir}</td>
+                <td className=" font-extralight px-5">{item.details}</td>
                 <td className="px-2">
                   <button
                     className="btn-danger basis-0"
-                    onClick={() => deleteLangue(item._id)}
+                    onClick={() => deleteLoisir(item._id)}
                   >
                     <MdDelete />
                   </button>
@@ -46,7 +45,7 @@ export default function AdminLangues() {
             ))}
         </tbody>
       </table>
-      <NewLangue/>
+      <NewHobbie />
     </div>
   );
 }
