@@ -68,7 +68,7 @@ export default function UpdateSkill() {
             }}
             value={mastery}
           />
-          <button className="btn-primary" navigate>Submit Changes</button>
+          <button className="btn-primary">Submit Changes</button>
         </form>
       </div>
     </div>

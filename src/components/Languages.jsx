@@ -17,7 +17,7 @@ export default function Languages() {
   }, []);
   return (
     <div>
-      <div className="m-6 border-white border-2 rounded-3xl shadow-lg shadow-red-500">
+      <div className=" container w-auto">
         <h2 className="h2-primary">
           Langues
         </h2>

@@ -17,7 +17,7 @@ export default function Hobbies() {
     getLoisirs();
   }, []);
   return (
-    <div className="mx-3 my-5 border-white border-2 rounded-3xl shadow-lg shadow-red-500">
+    <div className=" container w-auto">
       <h2 className="h2-primary">
         Loisirs
       </h2>

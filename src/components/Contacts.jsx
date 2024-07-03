@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { LuContact } from "react-icons/lu";
+import { CiPhone } from "react-icons/ci";
+import { MdOutlineAttachEmail } from "react-icons/md";
+import { IoHomeOutline } from "react-icons/io5"
 
 const BASE_URL = "http://localhost:3030/contact";
 
@@ -19,26 +22,31 @@ export default function Contacts() {
 
   return (
     <div className=" text-white">
-      <div className="grid grid-cols-4">
-        <h2 className="">Contacts</h2>
-        <span className="grow-0">
-          <LuContact />
-        </span>
-      </div>
+      <div className="grid grid-cols-4 justify-items-center"></div>
 
       {contact.length > 0 && (
         <table>
           <tbody>
             <tr>
-              <td>Tel</td>
+              <th>
+                <span className="">
+                  <LuContact size={24}/>
+                </span>
+              </th>
+              <th>
+                <h2 className="bg-slate-950 rounded-lg text-2xl ml-3 border border-white">Contacts</h2>
+              </th>
+            </tr>
+            <tr>
+              <td><span><CiPhone size={20}/></span></td>
               <td className=" font-extralight px-5">{contact[0].telephone}</td>
             </tr>
             <tr>
-              <td>Email</td>
+              <td><span><MdOutlineAttachEmail size={20}/></span></td>
               <td className=" font-extralight px-5">{contact[0].email}</td>
             </tr>
             <tr>
-              <td>Addresse</td>
+              <td><span><IoHomeOutline size={20}/></span></td>
               <td className=" font-extralight px-5">{contact[0].addresse}</td>
             </tr>
           </tbody>

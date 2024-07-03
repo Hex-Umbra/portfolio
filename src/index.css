@@ -8,7 +8,7 @@ body {
     transition: stroke-dashoffset 0.35s;
     transform: rotate(-90deg);
     transform-origin: 50% 50%;
-  }
+}
 
 @tailwind base;
 @tailwind components;
@@ -35,5 +35,8 @@ body {
     }
     .form {
         @apply m-5 flex flex-col justify-evenly items-center;
+    }
+    .container {
+        @apply mx-3 my-5 border-white border rounded-3xl shadow-lg shadow-red-500;
     }
 }

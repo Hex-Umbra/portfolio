@@ -4,6 +4,7 @@ import AdminHobbies from "../components/admin/AdminHobbies";
 import AdminLangues from "../components/admin/AdminLangues";
 import AdminSkills from "../components/admin/AdminSkills";
 import Login from "./Login";
+import AdminFormations from "../components/admin/AdminFormations";
 
 export default function Admin() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -41,6 +42,9 @@ export default function Admin() {
       </div>
       <div className="secondary-section">
         <AdminHobbies />
+      </div>
+      <div className="secondary-section">
+        <AdminFormations />
       </div>
     </>
   );

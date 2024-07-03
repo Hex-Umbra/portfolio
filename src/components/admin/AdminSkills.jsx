@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import NewSkill from "./NewSkill";
+import { enqueueSnackbar } from "notistack";
 import { MdDelete } from "react-icons/md";
 import { FaRegEdit } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -9,10 +10,15 @@ const BASE_URL = "http://localhost:3030/competences";
 export default function AdminSkills() {
   const [skill, setSkill] = useState([]);
   async function getSkills() {
-    const res = await fetch(BASE_URL);
-    const data = await res.json();
-    console.log(data);
-    setSkill(data);
+    try {
+      const res = await fetch(BASE_URL);
+      const data = await res.json();
+      setSkill(data);
+      console.log(data);
+      console.log(skill);
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   async function deleteSkill(id) {
@@ -20,12 +26,13 @@ export default function AdminSkills() {
       method: "DELETE",
     });
     if (res.ok) {
+      enqueueSnackbar("Deleted With Success");
       getSkills();
     }
   }
-  useEffect(()=>{
+  useEffect(() => {
     getSkills();
-  },[])
+  }, []);
   return (
     <div className="grid content-center items-center justify-items-center my-5">
       <table>
@@ -55,7 +62,7 @@ export default function AdminSkills() {
           ))}
         </tbody>
       </table>
-      <NewSkill />
+      <NewSkill/>
     </div>
   );
 }

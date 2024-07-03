@@ -11,7 +11,7 @@ export default function Section() {
             <h1 className="font-extrabold lg:text-6xl mb-2 text-center md:text-2xl">
               Gabriel Pereira Da Costa
             </h1>
-            <h2 className="font-bold mb-10 text-center">Web developer</h2>
+            <h2 className="font-bold mb-10 text-center lg:text-2xl md:text-sm">Web developer</h2>
             <p className="font-light text-center">
               Actuellement a la recherche d'une alternance en tant que
               développeur full-stack, accompagné par la Fabrique du Numérique
