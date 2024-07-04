@@ -3,33 +3,28 @@ import { MdCancel } from "react-icons/md";
 import { FaRegSave } from "react-icons/fa";
 import { IoMdAddCircle } from "react-icons/io";
 
-const BASE_URL = "http://localhost:3030/formations";
+const BASE_URL = "http://localhost:3030/experiences ";
 
-export default function NewFormation() {
-  const [type, setType] = useState("");
-  const [infos, setInfos] = useState("");
-  const [ecole, setEcole] = useState("");
+export default function NewExperience() {
+  const [job, setJob] = useState("");
+  const [mission, setMission] = useState("");
+  const [company, setCompany] = useState("");
   const [duree, setDuree] = useState("");
-  const [enCours, setEnCours] = useState(false);
   const [isAdd, setIsAdd] = useState(false);
   const [isBtnActive, setBtnActive] = useState(true);
-  const makeNewFormation = (e) => {
-    try {
-      if (type !== "") {
-        e.preventDefault();
-        fetch(BASE_URL, {
-          method: "POST",
-          headers: { "Content-type": "application/json" },
-          body: JSON.stringify({ type, infos, ecole, duree, enCours }),
-        }).then((res) => {
-          res.json();
-        });
-      }
-    } catch (error) {
-      console.log(error);
+  const makeNewExperience = (e) => {
+    if (job !== "") {
+      e.preventDefault();
+      fetch(BASE_URL, {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({ job, mission, company, duree }),
+      }).then((res) => {
+        res.json();
+      });
     }
   };
-  const addFormation = () => {
+  const addExperience = () => {
     setIsAdd(true);
     setBtnActive(false);
   };
@@ -40,17 +35,17 @@ export default function NewFormation() {
   return (
     <div className="flex flex-row">
       {isAdd && (
-        <form className="form" onSubmit={makeNewFormation}>
-          <label htmlFor="type">Nom Formation</label>
+        <form className="form" onSubmit={makeNewExperience}>
+          <label htmlFor="job">Poste</label>
           <input
             className="border-2 border-black rounded-lg pl-5 ml-5 bg-slate-400"
             onChange={(e) => {
-              setType(e.target.value);
+              setJob(e.target.value);
             }}
             type="text"
-            id="type"
+            id="job"
           />
-          <label htmlFor="duree">Début et Fin de la Formation</label>
+          <label htmlFor="duree">Dates d'emploi</label>
           <input
             className="border-2 border-black rounded-lg pl-5 ml-5 bg-slate-400"
             onChange={(e) => {
@@ -59,21 +54,21 @@ export default function NewFormation() {
             type="text"
             id="duree"
           />
-          <label htmlFor="ecole">École</label>
+          <label htmlFor="company">Compagnie</label>
           <input
             className="border-2 border-black rounded-lg pl-5 ml-5 bg-slate-400"
             onChange={(e) => {
-              setEcole(e.target.value);
+              setCompany(e.target.value);
             }}
             type="text"
-            id="ecole"
+            id="company"
           />
-          <label htmlFor="infos">Description</label>
+          <label htmlFor="mission">Description</label>
           <textarea
             className="bg-slate-400 border-2 border-black rounded-lg pl-5 ml-5"
-            id="infos"
+            id="mission"
             onChange={(e) => {
-              setInfos(e.target.value);
+              setMission(e.target.value);
             }}
           ></textarea>
           <div className="flex gap-20">
@@ -87,7 +82,7 @@ export default function NewFormation() {
         </form>
       )}
       {isBtnActive && (
-        <button className="btn-primary bg-yellow-500" onClick={addFormation}>
+        <button className="btn-primary bg-yellow-500" onClick={addExperience}>
           <IoMdAddCircle size={24} />
         </button>
       )}

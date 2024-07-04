@@ -5,6 +5,7 @@ import AdminLangues from "../components/admin/AdminLangues";
 import AdminSkills from "../components/admin/AdminSkills";
 import Login from "./Login";
 import AdminFormations from "../components/admin/AdminFormations";
+import AdminExperiences from "../components/admin/AdminExperiences";
 
 export default function Admin() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -20,15 +21,15 @@ export default function Admin() {
     }
   }
 
-  if (!isLoggedIn) {
-    return (
-      <Login
-        setUserName={(e) => setUsername(e.target.value)}
-        setPassword={(e) => setPassword(e.target.value)}
-        handleSubmit={handleSubmit}
-      />
-    );
-  }
+  // if (!isLoggedIn) {
+  //   return (
+  //     <Login
+  //       setUserName={(e) => setUsername(e.target.value)}
+  //       setPassword={(e) => setPassword(e.target.value)}
+  //       handleSubmit={handleSubmit}
+  //     />
+  //   );
+  // }
   return (
     <>
       <div className="secondary-section">
@@ -45,6 +46,9 @@ export default function Admin() {
       </div>
       <div className="secondary-section">
         <AdminFormations />
+      </div>
+      <div className="secondary-section">
+        <AdminExperiences />
       </div>
     </>
   );

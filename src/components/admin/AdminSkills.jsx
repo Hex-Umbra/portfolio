@@ -4,14 +4,16 @@ import { enqueueSnackbar } from "notistack";
 import { MdDelete } from "react-icons/md";
 import { FaRegEdit } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { IoIosRefresh } from "react-icons/io";
 
-const BASE_URL = "http://localhost:3030/competences";
+const BASE_URL = process.env.FETCH_URL
+const ROUTE_URL = `${BASE_URL}/competences`;
 
 export default function AdminSkills() {
   const [skill, setSkill] = useState([]);
   async function getSkills() {
     try {
-      const res = await fetch(BASE_URL);
+      const res = await fetch(ROUTE_URL);
       const data = await res.json();
       setSkill(data);
       console.log(data);
@@ -62,7 +64,12 @@ export default function AdminSkills() {
           ))}
         </tbody>
       </table>
+      <div className="flex items-end">
       <NewSkill/>
+        <button className="btn-primary bg-purple-500 h-full" onClick={getSkills}>
+          <IoIosRefresh size={24} />
+        </button>
+      </div>
     </div>
   );
 }

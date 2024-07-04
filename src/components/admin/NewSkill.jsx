@@ -4,7 +4,8 @@ import { MdCancel } from "react-icons/md";
 import { FaRegSave } from "react-icons/fa";
 import { enqueueSnackbar } from "notistack";
 
-const BASE_URL = "http://localhost:3030/competences";
+const BASE_URL = process.env.FETCH_URL
+const ROUTE_URL = `${BASE_URL}/competences`;
 
 export default function NewSkill() {
   const [technologie, setTechnologie] = useState("");
@@ -15,7 +16,7 @@ export default function NewSkill() {
   const makeNewSkill = (e) => {
     if (skill !== "") {
       e.preventDefault();
-      fetch(BASE_URL, {
+      fetch(ROUTE_URL, {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ technologie, img, mastery }),

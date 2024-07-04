@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import NewHobbie from "./NewHobbie";
 import { MdDelete } from "react-icons/md";
+import { IoIosRefresh } from "react-icons/io";
 
 const BASE_URL = "http://localhost:3030/loisirs";
 
@@ -45,7 +46,15 @@ export default function AdminHobbies() {
             ))}
         </tbody>
       </table>
-      <NewHobbie />
+      <div className="flex items-end">
+        <NewHobbie />
+        <button
+          className="btn-primary bg-purple-500 h-full"
+          onClick={getLoisirs}
+        >
+          <IoIosRefresh size={24} />
+        </button>
+      </div>
     </div>
   );
 }

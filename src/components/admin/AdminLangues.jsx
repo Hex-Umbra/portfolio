@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { MdDelete } from "react-icons/md";
 import NewLangue from "./NewLangue";
+import { IoIosRefresh } from "react-icons/io";
 
 const BASE_URL = "http://localhost:3030/languages";
 
@@ -46,7 +47,12 @@ export default function AdminLangues() {
             ))}
         </tbody>
       </table>
+      <div className="flex items-end">
       <NewLangue/>
+        <button className="btn-primary bg-purple-500 h-full" onClick={getLangues}>
+          <IoIosRefresh size={24} />
+        </button>
+      </div>
     </div>
   );
 }
