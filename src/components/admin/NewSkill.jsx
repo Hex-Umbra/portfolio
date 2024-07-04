@@ -4,7 +4,7 @@ import { MdCancel } from "react-icons/md";
 import { FaRegSave } from "react-icons/fa";
 import { enqueueSnackbar } from "notistack";
 
-const BASE_URL = process.env.FETCH_URL
+const BASE_URL = import.meta.env.VITE_FETCH_URL;
 const ROUTE_URL = `${BASE_URL}/competences`;
 
 export default function NewSkill() {

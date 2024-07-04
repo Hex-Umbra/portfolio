@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-const BASE_URL = "http://localhost:3030/competences/";
+const BASE_URL = import.meta.env.VITE_FETCH_URL
+const ROUTE_URL = `${BASE_URL}/competences/`;
 
 export default function UpdateSkill() {
   const navigate = useNavigate();
@@ -10,7 +11,7 @@ export default function UpdateSkill() {
   const [img, setImg] = useState("");
   const [mastery, setMastery] = useState("");
   const getSkill = async () => {
-    const res = await fetch(BASE_URL + id);
+    const res = await fetch(ROUTE_URL + id);
     const data = await res.json();
     console.log(data);
     setTechnologie(data.technologie);
@@ -20,7 +21,7 @@ export default function UpdateSkill() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch(BASE_URL + id, {
+    await fetch(ROUTE_URL + id, {
       method: "PUT",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({ technologie, img, mastery }),

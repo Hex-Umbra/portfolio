@@ -6,7 +6,7 @@ import { FaRegEdit } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { IoIosRefresh } from "react-icons/io";
 
-const BASE_URL = process.env.FETCH_URL
+const BASE_URL = import.meta.env.VITE_FETCH_URL;
 const ROUTE_URL = `${BASE_URL}/competences`;
 
 export default function AdminSkills() {
@@ -65,8 +65,11 @@ export default function AdminSkills() {
         </tbody>
       </table>
       <div className="flex items-end">
-      <NewSkill/>
-        <button className="btn-primary bg-purple-500 h-full" onClick={getSkills}>
+        <NewSkill />
+        <button
+          className="btn-primary bg-purple-500 h-full"
+          onClick={getSkills}
+        >
           <IoIosRefresh size={24} />
         </button>
       </div>

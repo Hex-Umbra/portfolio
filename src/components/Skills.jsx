@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import RadialProgressBar from "./RadialProgressBar";
 
-const BASE_URL = process.env.FETCH_URL
+
+const BASE_URL = import.meta.env.VITE_FETCH_URL
 const ROUTE_URL = `${BASE_URL}/competences`;
 
 export default function Skills() {
+  console.log(ROUTE_URL);
   const [skills, setSkills] = useState([]);
   async function getCompetences() {
     const res = await fetch(ROUTE_URL);
