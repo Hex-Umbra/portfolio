@@ -24,7 +24,7 @@ export default function AdminSkills() {
   }
 
   async function deleteSkill(id) {
-    const res = await fetch(`${BASE_URL}/${id}`, {
+    const res = await fetch(`${ROUTE_URL}/${id}`, {
       method: "DELETE",
     });
     if (res.ok) {

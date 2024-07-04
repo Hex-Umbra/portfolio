@@ -4,12 +4,13 @@ import { CiPhone } from "react-icons/ci";
 import { MdOutlineAttachEmail } from "react-icons/md";
 import { IoHomeOutline } from "react-icons/io5"
 
-const BASE_URL = "http://localhost:3030/contact";
+const BASE_URL = import.meta.env.VITE_FETCH_URL;
+const ROUTE_URL = `${BASE_URL}/contact`;
 
 export default function Contacts() {
   const [contact, setContact] = useState([]);
   async function getContact() {
-    const res = await fetch(BASE_URL);
+    const res = await fetch(ROUTE_URL);
     const data = await res.json();
     setContact(data);
     console.log(data);

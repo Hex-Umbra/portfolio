@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 
-const BASE_URL = "http://localhost:3030/loisirs";
+const BASE_URL = import.meta.env.VITE_FETCH_URL;
+const ROUTE_URL = `${BASE_URL}/loisirs`;
 
 
 export default function Hobbies() {
   const [loisirs, setLoisirs] = useState([]);
   async function getLoisirs() {
-    const res = await fetch(BASE_URL);
+    const res = await fetch(ROUTE_URL);
     const data = await res.json();
     setLoisirs(data);
     console.log(data);

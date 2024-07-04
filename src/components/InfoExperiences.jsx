@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 
 export default function InfoExperiences() {
-  const BASE_URL = "http://localhost:3030/experiences";
+  const BASE_URL = import.meta.env.VITE_FETCH_URL;
+const ROUTE_URL = `${BASE_URL}/experiences`;
 
   const [experiences, setExperiences] = useState([]);
   async function getExperiences() {
-    const res = await fetch(BASE_URL);
+    const res = await fetch(ROUTE_URL);
     const data = await res.json();
     setExperiences(data);
     console.log(data);

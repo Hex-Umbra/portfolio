@@ -3,19 +3,20 @@ import NewHobbie from "./NewHobbie";
 import { MdDelete } from "react-icons/md";
 import { IoIosRefresh } from "react-icons/io";
 
-const BASE_URL = "http://localhost:3030/loisirs";
+const BASE_URL = import.meta.env.VITE_FETCH_URL;
+const ROUTE_URL = `${BASE_URL}/loisirs`;
 
 export default function AdminHobbies() {
   const [loisirs, setLoisirs] = useState([]);
   async function getLoisirs() {
-    const res = await fetch(BASE_URL);
+    const res = await fetch(ROUTE_URL);
     const data = await res.json();
     setLoisirs(data);
     console.log(data);
     console.log(loisirs);
   }
   async function deleteLoisir(id) {
-    const res = await fetch(`${BASE_URL}/${id}`, {
+    const res = await fetch(`${ROUTE_URL}/${id}`, {
       method: "DELETE",
     });
     if (res.ok) {

@@ -3,16 +3,18 @@ import { IoMdAddCircle } from "react-icons/io";
 import { MdCancel } from "react-icons/md";
 import { FaRegSave } from "react-icons/fa";
 
-const BASE_URL = "http://localhost:3030/loisirs";
+const BASE_URL = import.meta.env.VITE_FETCH_URL;
+const ROUTE_URL = `${BASE_URL}/loisirs`;
 
 export default function NewHobbie() {
     const [loisir, setLoisir] = useState("");
   const [details, setDetails] = useState("");
   const [isAdd, setIsAdd] = useState(false);
   const [isBtnActive, setBtnActive] = useState(true);
-  const makeNewLoisir = () => {
+  const makeNewLoisir = (e) => {
+    e.preventDefault();
     if (loisir !== "") {
-      fetch(BASE_URL, {
+      fetch(ROUTE_URL, {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ loisir, details }),

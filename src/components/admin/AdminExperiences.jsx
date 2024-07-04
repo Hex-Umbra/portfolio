@@ -5,13 +5,14 @@ import { Link } from "react-router-dom";
 import NewExperience from "./NewExperience";
 import { IoIosRefresh } from "react-icons/io";
 
-const BASE_URL = "http://localhost:3030/experiences";
+const BASE_URL = import.meta.env.VITE_FETCH_URL;
+const ROUTE_URL = `${BASE_URL}/experiences`;
 
 export default function AdminExperiences() {
   const [experiences, setExperiences] = useState([]);
   async function getExperiences() {
     try {
-      const res = await fetch(BASE_URL);
+      const res = await fetch(ROUTE_URL);
       const data = await res.json();
       setExperiences(data);
       console.log(data);
@@ -21,7 +22,7 @@ export default function AdminExperiences() {
     }
   }
   async function deleteExperience(id) {
-    const res = await fetch(`${BASE_URL}/${id}`, {
+    const res = await fetch(`${ROUTE_URL}/${id}`, {
       method: "DELETE",
     });
     if (res.ok) {

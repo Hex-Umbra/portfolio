@@ -5,13 +5,14 @@ import { FaRegEdit } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { IoIosRefresh } from "react-icons/io";
 
-const BASE_URL = "http://localhost:3030/formations";
+const BASE_URL = import.meta.env.VITE_FETCH_URL;
+const ROUTE_URL = `${BASE_URL}/formations`;
 
 export default function AdminFormations() {
   const [formation, setFormation] = useState([]);
   async function getFormations() {
     try {
-      const res = await fetch(BASE_URL);
+      const res = await fetch(ROUTE_URL);
       const data = await res.json();
       setFormation(data);
       console.log(data);
@@ -21,7 +22,7 @@ export default function AdminFormations() {
     }
   }
   async function deleteFormation(id) {
-    const res = await fetch(`${BASE_URL}/${id}`, {
+    const res = await fetch(`${ROUTE_URL}/${id}`, {
       method: "DELETE",
     });
     if (res.ok) {

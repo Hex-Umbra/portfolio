@@ -3,7 +3,8 @@ import { MdCancel } from "react-icons/md";
 import { FaRegSave } from "react-icons/fa";
 import { IoMdAddCircle } from "react-icons/io";
 
-const BASE_URL = "http://localhost:3030/formations";
+const BASE_URL = import.meta.env.VITE_FETCH_URL;
+const ROUTE_URL = `${BASE_URL}/formations`;
 
 export default function NewFormation() {
   const [type, setType] = useState("");
@@ -17,7 +18,7 @@ export default function NewFormation() {
     try {
       if (type !== "") {
         e.preventDefault();
-        fetch(BASE_URL, {
+        fetch(ROUTE_URL, {
           method: "POST",
           headers: { "Content-type": "application/json" },
           body: JSON.stringify({ type, infos, ecole, duree, enCours }),

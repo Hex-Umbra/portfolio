@@ -3,7 +3,8 @@ import { MdCancel } from "react-icons/md";
 import { FaRegSave } from "react-icons/fa";
 import { IoMdAddCircle } from "react-icons/io";
 
-const BASE_URL = "http://localhost:3030/experiences ";
+const BASE_URL = import.meta.env.VITE_FETCH_URL;
+const ROUTE_URL = `${BASE_URL}/experiences`;
 
 export default function NewExperience() {
   const [job, setJob] = useState("");
@@ -15,7 +16,7 @@ export default function NewExperience() {
   const makeNewExperience = (e) => {
     if (job !== "") {
       e.preventDefault();
-      fetch(BASE_URL, {
+      fetch(ROUTE_URL, {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ job, mission, company, duree }),

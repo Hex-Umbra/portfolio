@@ -12,7 +12,8 @@ export default function NewLangue() {
   const [image, setImage] = useState("");
   const [isAdd, setIsAdd] = useState(false);
   const [isBtnActive, setBtnActive] = useState(true);
-  const makeNewLangue = () => {
+  const makeNewLangue = (e) => {
+    e.preventDefault();
     if (langue !== "") {
       fetch(ROUTE_URL, {
         method: "POST",
@@ -57,7 +58,7 @@ export default function NewLangue() {
             className="bg-slate-400 mt-5 px-5 mx-5 text-center"
             onChange={(e) => setMastery(e.target.value)}
           >
-            <option selected hidden value="">
+            <option defaultValue hidden>
               Choisir le Niveau
             </option>
             <option value="Langue Maternelle">Langue Maternelle</option>

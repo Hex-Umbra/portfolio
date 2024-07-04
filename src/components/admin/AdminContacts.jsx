@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { FaRegSave } from "react-icons/fa";
 
-const BASE_URL = "http://localhost:3030/contact";
+const BASE_URL = import.meta.env.VITE_FETCH_URL;
+const ROUTE_URL = `${BASE_URL}/contact`;
 
 export default function AdminContacts() {
   const [email, setEmail] = useState("");
@@ -10,7 +11,7 @@ export default function AdminContacts() {
   const [prenom, setPrenom] = useState("");
   const [nom, setNom] = useState("");
   async function getContact() {
-    const res = await fetch(BASE_URL);
+    const res = await fetch(ROUTE_URL);
     const data = await res.json();
     setTelephone(data[0].telephone);
     setEmail(data[0].email);
@@ -25,7 +26,7 @@ export default function AdminContacts() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch(BASE_URL, {
+    await fetch(ROUTE_URL, {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({ nom, prenom, telephone, email, addresse }),
