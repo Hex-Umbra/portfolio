@@ -3,7 +3,8 @@ import { IoMdAddCircle } from "react-icons/io";
 import { MdCancel } from "react-icons/md";
 import { FaRegSave } from "react-icons/fa";
 
-const BASE_URL = "http://localhost:3030/languages";
+const BASE_URL = import.meta.env.VITE_FETCH_URL
+const ROUTE_URL = `${BASE_URL}/languages`;
 
 export default function NewLangue() {
   const [langue, setLangue] = useState("");
@@ -13,7 +14,7 @@ export default function NewLangue() {
   const [isBtnActive, setBtnActive] = useState(true);
   const makeNewLangue = () => {
     if (langue !== "") {
-      fetch(BASE_URL, {
+      fetch(ROUTE_URL, {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ langue, mastery, image }),

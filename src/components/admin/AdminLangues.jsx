@@ -3,19 +3,20 @@ import { MdDelete } from "react-icons/md";
 import NewLangue from "./NewLangue";
 import { IoIosRefresh } from "react-icons/io";
 
-const BASE_URL = "http://localhost:3030/languages";
+const BASE_URL = import.meta.env.VITE_FETCH_URL;
+const ROUTE_URL = `${BASE_URL}/languages`;
 
 export default function AdminLangues() {
   const [langues, setLangues] = useState([]);
   async function getLangues() {
-    const res = await fetch(BASE_URL);
+    const res = await fetch(ROUTE_URL);
     const data = await res.json();
     setLangues(data);
     console.log(data);
     console.log(langues);
   }
   async function deleteLangue(id) {
-    const res = await fetch(`${BASE_URL}/${id}`, {
+    const res = await fetch(`${ROUTE_URL}/${id}`, {
       method: "DELETE",
     });
     if (res.ok) {

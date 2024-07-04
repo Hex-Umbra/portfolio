@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-const BASE_URL = "http://localhost:3030/languages";
+const BASE_URL = import.meta.env.VITE_FETCH_URL;
+const ROUTE_URL = `${BASE_URL}/languages`;
 
 export default function Languages() {
   const [langues, setLangues] = useState([]);
   async function getLangues() {
-    const res = await fetch(BASE_URL);
+    const res = await fetch(ROUTE_URL);
     const data = await res.json();
     setLangues(data);
     console.log(data);
