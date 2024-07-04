@@ -20,8 +20,8 @@ export default function Section() {
           <Contacts />
         </div>
         {/* 2eme colonne */}
-        <div className="h-full w-4/5 place-self-center">
-          <div className=" absolute bg-slate-950 rounded-full w-[400px] h-[400px] bg-[url('/assets/images/profile_pic.png')] top-16"></div>
+        <div className="flex justify-center items-center h-full w-4/5">
+          <div className="rounded-full lg:w-[400px] lg:h-[400px] bg-[url('/assets/images/profile_pic.png')] bg-no-repeat bg-cover"></div>
         </div>
       </div>
     </section>

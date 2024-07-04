@@ -22,13 +22,13 @@ export default function Hobbies() {
       <h2 className="h2-primary">
         Loisirs
       </h2>
-      <table className="mb-5">
+      <table className="mb-5 text-center">
         <tbody>
           {loisirs.length > 0 &&
             loisirs.map((item, index) => (
               <tr key={index}>
                 <td className="px-6">{item.loisir}</td>
-                <td className=" font-extralight px-5">{item.details}</td>
+                <td className=" font-extralight">{item.details}</td>
               </tr>
             ))}
         </tbody>
