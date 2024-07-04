@@ -15,11 +15,6 @@ export default function Navbar() {
         >
           <Link to={"/admin"}>Admin Page</Link>
         </li>
-        <li
-          className="nav-link"
-        >
-          <Link to={"/login"}>Login Page</Link>
-        </li>
       </ul>
     </nav>
   );

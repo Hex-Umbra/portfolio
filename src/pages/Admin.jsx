@@ -21,15 +21,15 @@ export default function Admin() {
     }
   }
 
-  // if (!isLoggedIn) {
-  //   return (
-  //     <Login
-  //       setUserName={(e) => setUsername(e.target.value)}
-  //       setPassword={(e) => setPassword(e.target.value)}
-  //       handleSubmit={handleSubmit}
-  //     />
-  //   );
-  // }
+  if (!isLoggedIn) {
+    return (
+      <Login
+        setUserName={(e) => setUsername(e.target.value)}
+        setPassword={(e) => setPassword(e.target.value)}
+        handleSubmit={handleSubmit}
+      />
+    );
+  }
   return (
     <>
       <div className="secondary-section">
