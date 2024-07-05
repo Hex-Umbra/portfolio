@@ -24,9 +24,6 @@ body {
     .btn-danger {
         @apply rounded-lg bg-red-600 p-2 mt-1;
     }
-    .nav-link {
-        @apply text-white hover:bg-[#943126] hover:text-black p-5;
-    }
     .secondary-section {
         @apply h-auto bg-slate-950 mx-16 rounded-3xl my-10 content-center shadow-2xl shadow-black;
     }
@@ -38,5 +35,8 @@ body {
     }
     .container {
         @apply mx-3 my-5 border-white border rounded-3xl shadow-lg shadow-red-500;
+    }
+    .navbar-md{
+        @apply bg-slate-950 flex items-center justify-between;
     }
 }
