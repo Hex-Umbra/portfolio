@@ -3,7 +3,7 @@ import RadialProgressBar from "./RadialProgressBar";
 
 
 const BASE_URL = import.meta.env.VITE_FETCH_URL
-const ROUTE_URL = `${BASE_URL}/competences`;
+const ROUTE_URL = `https://portfolio-api-wpr7.onrender.com/competences`;
 
 export default function Skills() {
   console.log(ROUTE_URL);
