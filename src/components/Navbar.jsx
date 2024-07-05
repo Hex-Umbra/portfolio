@@ -4,7 +4,7 @@ import { FaHome } from "react-icons/fa";
 import { RiAdminFill } from "react-icons/ri";
 export default function Navbar() {
   return (
-    <nav className="bg-slate-950 p-5 md:navbar-md sticky" >
+    <nav className="bg-slate-950 md:navbar-md py-1" >
       <div className="hidden md:inline">
         <span className="text-xl cursor-pointer md:text-4xl pl-16 md:pl-0">
           <img
