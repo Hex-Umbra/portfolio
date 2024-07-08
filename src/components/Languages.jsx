@@ -18,8 +18,8 @@ export default function Languages() {
   }, []);
   return (
     <div>
-      <div className=" container w-auto">
-        <h2 className="h2-primary">
+      <div className=" md:container">
+        <h2 className="md:h2-primary h2-primary-res">
           Langues
         </h2>
         <table className="mb-5">
@@ -27,9 +27,9 @@ export default function Languages() {
             {langues.length > 0 &&
               langues.map((item, index) => (
                 <tr key={index}>
-                  <td className="px-6"><img src={item.image} alt="" /></td>
-                  <td className="px-6">{item.langue}</td>
-                  <td className=" font-extralight px-5">{item.mastery}</td>
+                  <td className="md:px-6 "><img src={item.image} alt="" /></td>
+                  <td className="md:px-6">{item.langue}</td>
+                  <td className=" font-extralight md:px-5 px-0">{item.mastery}</td>
                 </tr>
               ))}
           </tbody>

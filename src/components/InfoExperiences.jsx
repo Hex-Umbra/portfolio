@@ -17,12 +17,12 @@ const ROUTE_URL = `${BASE_URL}/experiences`;
     getExperiences();
   }, []);
   return (
-    <div className="flex flex-col items-center text-center p-5 w-full">
-      <h2 className="h2-primary bg-slate-950 w-1/2">Éxperiences</h2>
+    <div className="flex flex-col items-center text-center md:p-5 md:w-full">
+      <h2 className="h2-primary bg-slate-950 md:w-1/2">Éxperiences</h2>
       {experiences.map((item, index) => (
         <div className="flex flex-col items-center" key={index}>
           <div className="my-2">
-            <h3 className="text-2xl font-semibold text-red-500">{item.job}</h3>
+            <h3 className="text-2xl font-extrabold text-slate-800">{item.job}</h3>
             <h4 className="text-medium font-semibold">{item.company}</h4>
           </div>
           <div className="my-2">

@@ -18,17 +18,17 @@ export default function Hobbies() {
     getLoisirs();
   }, []);
   return (
-    <div className=" container w-auto">
-      <h2 className="h2-primary">
+    <div className=" md:container md:w-auto">
+      <h2 className="md:h2-primary h2-primary-res">
         Loisirs
       </h2>
-      <table className="mb-5 text-center">
+      <table className=" mb-5 text-center md:text-base text-sm">
         <tbody>
           {loisirs.length > 0 &&
             loisirs.map((item, index) => (
               <tr key={index}>
-                <td className="px-6">{item.loisir}</td>
-                <td className=" font-extralight">{item.details}</td>
+                <td className="md:px-6">{item.loisir}</td>
+                <td className=" font-extralight text-xs" >{item.details}</td>
               </tr>
             ))}
         </tbody>

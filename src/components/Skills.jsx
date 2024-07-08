@@ -19,13 +19,13 @@ export default function Skills() {
   }, []);
 
   return (
-    <div className=" container w-auto">
-      <h2 className="h2-primary">Compétences</h2>
-      <div className="flex flex-row justify-center gap-5 items-center m-5 flex-wrap">
+    <div className=" md:container md:w-auto w-full">
+      <h2 className="md:h2-primary h2-primary-res">Compétences</h2>
+      <div className="flex md:flex-row justify-center md:gap-5 gap-3 items-center md:m-5 flex-wrap">
         {skills.map((item, index) => (
-          <div className="flex flex-col gap-3 justify-center items-center" key={index}>
+          <div className="flex flex-col md:gap-3 justify-center items-center" key={index}>
             <img src={item.img} alt="" />
-            <p className=" text-lg">{item.technologie}</p>
+            <p className=" md:text-lg text-base">{item.technologie}</p>
             <RadialProgressBar progress={item.mastery}/>
           </div>
         ))}
