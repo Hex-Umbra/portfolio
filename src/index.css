@@ -42,4 +42,10 @@ body {
     .navbar-md{
         @apply bg-slate-950 flex items-center justify-between;
     }
+    .card-carousel{
+        @apply flex flex-col gap-1 h-auto ease-in duration-300 w-[350px] p-2 justify-center items-center bg-slate-800 border rounded-lg shadow-lg shadow-white ;
+    }
+    .card-carousel-hover{
+        @apply ease-out duration-300 relative -translate-y-2 scale-110 ;
+    }
 }

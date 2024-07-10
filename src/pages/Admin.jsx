@@ -6,6 +6,7 @@ import AdminSkills from "../components/admin/AdminSkills";
 import Login from "./Login";
 import AdminFormations from "../components/admin/AdminFormations";
 import AdminExperiences from "../components/admin/AdminExperiences";
+import AdminProjects from "../components/admin/AdminProjects";
 
 export default function Admin() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -14,7 +15,7 @@ export default function Admin() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (username === "Aeternum" && password === "adminroot") {
+    if (username === localStorage.getItem("username") && password === localStorage.getItem("password")) {
       setIsLoggedIn(true);
     } else {
       alert("Vous n'avez pas accès a cette page veuillez réessayer")
@@ -50,6 +51,10 @@ export default function Admin() {
       <div className="secondary-section">
         <AdminExperiences />
       </div>
+      <div className="secondary-section">
+        <AdminProjects />
+      </div>
+
     </>
   );
 }
