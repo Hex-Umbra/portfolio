@@ -11,8 +11,6 @@ export default function Languages() {
     const res = await fetch(ROUTE_URL);
     const data = await res.json();
     setLangues(data);
-    console.log(data);
-    console.log(langues);
     if (data) {
       setIsLoaded(false);
     }

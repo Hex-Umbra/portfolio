@@ -12,8 +12,6 @@ export default function InfoFormations() {
     const res = await fetch(ROUTE_URL);
     const data = await res.json();
     setFormation(data);
-    console.log(data);
-    console.log(formation);
     if (data) {
       setIsLoaded(false);
     }

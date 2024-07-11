@@ -12,8 +12,6 @@ const ROUTE_URL = `${BASE_URL}/experiences`;
     const res = await fetch(ROUTE_URL);
     const data = await res.json();
     setExperiences(data);
-    console.log(data);
-    console.log(experiences);
     if (data) {
       setIsLoaded(false);
     }

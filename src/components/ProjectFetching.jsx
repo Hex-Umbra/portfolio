@@ -10,15 +10,12 @@ export default function ProjectFetching() {
   const [isLoaded, setIsLoaded] = useState(true);
   const handleToggle = () => {
     setIsToggle(!isToggle);
-    console.log(isToggle);
   };
   const [elements, setElements] = useState([]);
   async function getElements() {
     const res = await fetch(ROUTE_URL);
     const data = await res.json();
     setElements(data);
-    console.log(data);
-    console.log(elements);
     if (data) {
       setIsLoaded(false);
     }
