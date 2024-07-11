@@ -4,18 +4,22 @@ import { CiPhone } from "react-icons/ci";
 import { MdOutlineAttachEmail } from "react-icons/md";
 import { IoHomeOutline } from "react-icons/io5";
 import { AiOutlineLinkedin } from "react-icons/ai";
+import { ColorRing } from "react-loader-spinner";
 
 const BASE_URL = import.meta.env.VITE_FETCH_URL;
 const ROUTE_URL = `${BASE_URL}/contact`;
 
 export default function Contacts() {
   const [contact, setContact] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(true);
+
   async function getContact() {
     const res = await fetch(ROUTE_URL);
     const data = await res.json();
     setContact(data);
-    console.log(data);
-    console.log(contact);
+    if (data) {
+      setIsLoaded(false);
+    }
   }
 
   useEffect(() => {
@@ -25,6 +29,17 @@ export default function Contacts() {
   return (
     <div className=" text-white">
       <div className="grid grid-cols-4 justify-items-center"></div>
+      {isLoaded && (
+            <ColorRing
+              visible={true}
+              height="80"
+              width="80"
+              ariaLabel="color-ring-loading"
+              wrapperStyle={{}}
+              wrapperClass="color-ring-wrapper"
+              colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
+            />
+          )}
 
       {contact.length > 0 && (
         <table>

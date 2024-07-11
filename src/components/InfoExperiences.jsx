@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from "react";
+import { ColorRing } from "react-loader-spinner";
 
 export default function InfoExperiences() {
   const BASE_URL = import.meta.env.VITE_FETCH_URL;
 const ROUTE_URL = `${BASE_URL}/experiences`;
 
   const [experiences, setExperiences] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(true);
+
   async function getExperiences() {
     const res = await fetch(ROUTE_URL);
     const data = await res.json();
     setExperiences(data);
     console.log(data);
     console.log(experiences);
+    if (data) {
+      setIsLoaded(false);
+    }
   }
 
   useEffect(() => {
@@ -19,6 +25,17 @@ const ROUTE_URL = `${BASE_URL}/experiences`;
   return (
     <div className="flex flex-col items-center text-center md:p-5 md:w-full">
       <h2 className="h2-primary bg-slate-950 md:w-1/2">Éxperiences</h2>
+      {isLoaded && (
+        <ColorRing
+          visible={true}
+          height="80"
+          width="80"
+          ariaLabel="color-ring-loading"
+          wrapperStyle={{}}
+          wrapperClass="color-ring-wrapper"
+          colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
+        />
+      )}
       {experiences.map((item, index) => (
         <div className="flex flex-col items-center" key={index}>
           <div className="my-2">
